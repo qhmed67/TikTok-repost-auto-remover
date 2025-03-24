@@ -10,5 +10,6 @@ Log into your TikTok account before running the program, You will not have the o
 
 Important:
 The program will stop when you click the " * " button.
+Run the program with administrator privileges.
 
 Developer: [Ahmed Youssef]
