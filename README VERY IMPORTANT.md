@@ -9,7 +9,8 @@ Make sure that chrome.exe is located at this path:
 Log into your TikTok account before running the program, You will not have the option to log in while the code is running, The program will automatically use the last logged-in session .
 
 Important:
-The program will stop when you click the " * " button.
-Run the program with administrator privileges.
+The program will stop when you click the " * " button .
+
+Run the program with administrator privileges .
 
 Developer: [Ahmed Youssef]
