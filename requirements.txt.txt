@@ -1,0 +1,4 @@
+pygetwindow
+pyperclip
+keyboard
+pyinstaller
