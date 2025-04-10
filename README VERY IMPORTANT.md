@@ -8,7 +8,7 @@ Make sure that chrome.exe is located at this path:
 or
 "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 
-Once the console opens, if the code doesn't paste automatically (and the console stays idle for more than 5 seconds), please click on the [ > __] in the console immediately by yourself.
+Once the console opens, if the code doesn't paste automatically (and the console stays idle for more than 5 seconds), please click on the [ > __ ] in the console immediately by yourself.
 
 *Very important* Log into your TikTok account before running the program, You will not have the option to log in while the code is running, The program will automatically use the last logged-in session .
 
