@@ -17,4 +17,4 @@ The program will stop when you click the " * " button .
 
 Run the program with administrator privileges .
 
-Developer: [Ahmed Youssef]
+Developer: [Ahmed Youssef] 
