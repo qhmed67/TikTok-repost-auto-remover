@@ -52,7 +52,7 @@ time.sleep(5)
 # ✅ Solve "allow pasting" issue
 pyperclip.copy("allow pasting")  # Copy the command
 keyboard.press_and_release("ctrl+v")  # Paste the command in the Console
-time.sleep(0.5)
+time.sleep(1)
 keyboard.press_and_release("enter")  # Execute the command
 
 # ✅ Copy JavaScript code to open the Reposts tab
@@ -72,7 +72,7 @@ pyperclip.copy(js_code_open_reposts)  # Copy the code
 
 # ✅ Paste the code into DevTools
 keyboard.press_and_release("ctrl+v")
-time.sleep(0.5)
+time.sleep(1)
 keyboard.press_and_release("enter")  # Execute the code
 
 # Wait until the Reposts tab is opened
@@ -99,7 +99,9 @@ keyboard.press_and_release("ctrl+v")
 time.sleep(1)
 keyboard.press_and_release("enter")  # Execute the code
 
+
 # Start the repeating process (unfollow repost then next)
+time.sleep(2)
 repost_count = 0
 while True:  # Infinite loop until the user presses F1 to stop the program
     if keyboard.is_pressed('*'):  # Check if the user pressed F1
@@ -134,11 +136,11 @@ while True:  # Infinite loop until the user presses F1 to stop the program
     """
     pyperclip.copy(setTimeout_js)  # Copy the code
     keyboard.press_and_release("ctrl+v")
-    time.sleep(0.5)
+    time.sleep(1)
     keyboard.press_and_release("enter")  # Execute the code
 
     # Wait a few seconds after unfollowing repost
-    time.sleep(0.5)
+    time.sleep(1)
 
     # Click on the next button (move to the next video)
     next_video_js = """
@@ -155,7 +157,7 @@ while True:  # Infinite loop until the user presses F1 to stop the program
     """
     pyperclip.copy(next_video_js)  # Copy the next video code
     keyboard.press_and_release("ctrl+v")
-    time.sleep(0.5)
+    time.sleep(1)
     keyboard.press_and_release("enter")  # Execute the code
 
     repost_count += 1  # Update the counter for the videos from which repost was unfollowed
