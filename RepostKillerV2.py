@@ -5,48 +5,54 @@ import pygetwindow as gw
 import pyperclip
 import keyboard
 
-# ✅ Define the path of Google Chrome
-chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+# ✅ Define the usual paths for Google Chrome
+chrome_path_64bit = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+chrome_path_32bit = r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 
 # ✅ Check if Google Chrome exists
-if not os.path.exists(chrome_path):
-    print(f"❌ Google Chrome was not found at the path:\n{chrome_path}")
+if os.path.exists(chrome_path_64bit):
+    chrome_path = chrome_path_64bit
+elif os.path.exists(chrome_path_32bit):
+    chrome_path = chrome_path_32bit
+else:
+    print(f"❌ Google Chrome not found in the usual paths.")
+    input("Press any key to exit...")  # Keeps the console open after the error message
     exit()
 
-# ✅ Open TikTok profile page
+# ✅ Open TikTok profile page in a new tab
 tiktok_profile_url = "https://www.tiktok.com/profile"
 try:
-    subprocess.Popen([chrome_path, tiktok_profile_url], shell=True)
+    subprocess.Popen([chrome_path, "--new-tab", tiktok_profile_url], shell=True)  # Open in a new tab
     print("✅ TikTok profile page opened!")
 except Exception as e:
-    print(f"❌ An error occurred while trying to open the browser: {e}")
+    print(f"❌ Error while trying to open the browser: {e}")
+    input("Press any key to exit...")  # Keeps the console open after the error message
     exit()
 
 # ✅ Wait for Chrome to load and maximize the window
-time.sleep(5)
+time.sleep(3)
 chrome_window = None
 for window in gw.getWindowsWithTitle("Google Chrome"):
     chrome_window = window
     break
 
 if chrome_window:
-    chrome_window.maximize()  # Set Chrome to full screen mode
+    chrome_window.maximize()  # Maximize the Chrome window
     print("✅ Google Chrome window maximized!")
 
 # ✅ Wait for the website to load completely
 print("⏳ Waiting for 5 seconds until the site is fully loaded. If the page takes longer than 5 seconds to load, the program won't work...")
+time.sleep(3)
+
+# Console
+keyboard.press_and_release("ctrl+shift+i")  # Open DevTools
 time.sleep(5)
 
-# ✅ Open DevTools and run JavaScript to click on the "Reposts" button
-keyboard.press_and_release("ctrl+shift+i")  # Open DevTools
-time.sleep(2)
-keyboard.press_and_release("ctrl+shift+j")  # Switch to Console
-time.sleep(1)
 
 # ✅ Solve "allow pasting" issue
 pyperclip.copy("allow pasting")  # Copy the command
 keyboard.press_and_release("ctrl+v")  # Paste the command in the Console
-time.sleep(1.3)
+time.sleep(0.5)
 keyboard.press_and_release("enter")  # Execute the command
 
 # ✅ Copy JavaScript code to open the Reposts tab
@@ -70,7 +76,7 @@ time.sleep(0.5)
 keyboard.press_and_release("enter")  # Execute the code
 
 # Wait until the Reposts tab is opened
-time.sleep(5)
+time.sleep(3)
 
 # ✅ Copy JavaScript code to find the first image in Reposts
 js_code_find_image = """
